@@ -28,11 +28,11 @@ const implicitObj = {
     name: 'Colin',
     age: 21,
     sayName: function() {
-        console.log(`Hi, my name is ${this.name} and I'm ${this.age} years old!`)
+        return `Hi, my name is ${this.name} and I'm ${this.age} years old!`;
     } 
 }
 
-implicitObj.sayName();
+console.log(implicitObj.sayName());
 
 // Principle 3
 
@@ -45,22 +45,22 @@ function Dog(name, breed, age) {
 }
 
 Dog.prototype.speak = function() {
-    console.log(`Hi, my name is ${this.name}! I'm a ${this.age} year old ${this.breed}! Woof!`);
+    return `Hi, my name is ${this.name}! I'm a ${this.age} year old ${this.breed}! Woof!`;
 }
 
 const zara = new Dog('Zara', 'Aussie', 10);
 const gypsy = new Dog('Gypsy', 'Aussie', 5);
 const sadie = new Dog('Sadie', 'Chihuahua', 8);
 
-zara.speak();
-gypsy.speak();
-sadie.speak();
+console.log(zara.speak());
+console.log(gypsy.speak());
+console.log(sadie.speak());
 
 // Principle 4
 
 // code example for Explicit Binding
 
-//USED CONSTRUCTOR FUNCTION FROM ABOVE
+/////// USED CONSTRUCTOR FUNCTION FROM ABOVE
 
-gypsy.speak.call(zara);
-sadie.speak.call(gypsy);
+console.log(gypsy.speak.call(zara));
+console.log(sadie.speak.call(gypsy));
