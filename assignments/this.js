@@ -38,19 +38,19 @@ console.log(implicitObj.sayName());
 
 // code example for New Binding
 
-function Dog(name, breed, age) {
-    this.name = name;
-    this.breed = breed;
-    this.age = age;
+function Dog(attributes) {
+    this.name = attributes.name;
+    this.breed = attributes.breed;
+    this.age = attributes.age;
 }
 
 Dog.prototype.speak = function() {
     return `Hi, my name is ${this.name}! I'm a ${this.age} year old ${this.breed}! Woof!`;
 }
 
-const zara = new Dog('Zara', 'Aussie', 10);
-const gypsy = new Dog('Gypsy', 'Aussie', 5);
-const sadie = new Dog('Sadie', 'Chihuahua', 8);
+const zara = new Dog({name: 'Zara', breed: 'Aussie', age: 10});
+const gypsy = new Dog({name: 'Gypsy', breed: 'Aussie', age: 5});
+const sadie = new Dog({name: 'Sadie', breed: 'Chihuahua', age: 8});
 
 console.log(zara.speak());
 console.log(gypsy.speak());
